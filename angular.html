@@ -1,0 +1,195 @@
+<div class="container-fluid bg-secondary overflow-hidden h-60 w-100">
+    <h1 class="text-center text-dark text-decoration-underline pt-3">
+       Training Score
+    </h1>
+    <hr class="bg-success"/>
+  
+    <form [formGroup]="myform" (ngSubmit)="onSubmit(myform)">
+      <table class="table table-success table-striped mt-8">
+        <thead>
+          <tr>
+            <th scope="col">Subject Code</th>
+            <th scope="col">Subject Name</th>
+            <th scope="col">Total-Marks</th>
+            <th scope="col" colspan="4">Marks Obtained</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">It8001[T]</th>
+            <td>Angular</td>
+            <td>100</td>
+            <td colspan="4">
+              <input
+                type="number"
+                name="sub1"
+                placeholder="Enter Your Marks"
+                formControlName="sub1"
+              />
+            </td>
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                !myform.controls['sub1'].valid && myform.controls['sub1'].touched
+              "
+            >
+              Marks is reqired
+            </div>
+          </tr>
+          <tr>
+            <th scope="row">It8002[t]</th>
+            <td>DotNet</td>
+            <td>100</td>
+            <td colspan="4">
+              <input
+                type="number"
+                name="sub2"
+                placeholder="Enter Your Marks"
+                formControlName="sub2"
+              />
+            </td>
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                !myform.controls['sub2'].valid && myform.controls['sub2'].touched
+              "
+            >
+              Marks is reqired
+            </div>
+          </tr>
+          <tr>
+            <th scope="row">It8002[t]</th>
+            <td>Python</td>
+            <td>100</td>
+            <td colspan="4">
+              <input
+                type="number"
+                name="sub3"
+                placeholder="Enter Your Marks"
+                formControlName="sub3"
+              />
+            </td>
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                !myform.controls['sub3'].valid && myform.controls['sub3'].touched
+              "
+            >
+              Marks is reqired
+            </div>
+          </tr>
+          <tr>
+            <th scope="row">It8002[t]</th>
+            <td>Atificial Intelligence</td>
+            <td>100</td>
+            <td colspan="4">
+              <input
+                type="number"
+                name="sub4"
+                placeholder="Enter Your Marks"
+                formControlName="sub4"
+              />
+            </td>
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                !myform.controls['sub4'].valid && myform.controls['sub4'].touched
+              "
+            >
+              Marks is reqired
+            </div>
+          </tr>
+          <tr>
+            <th scope="row">It8002[t]</th>
+            <td>Java</td>
+            <td>100</td>
+            <td colspan="4">
+              <input
+                type="number"
+                name="sub5"
+                placeholder="Enter Your Marks"
+                formControlName="sub5"
+              />
+            </td>
+            <div
+              class="alert alert-danger"
+              *ngIf="
+                !myform.controls['sub5'].valid && myform.controls['sub5'].touched
+              "
+            >
+              Marks is reqired
+            </div>
+            
+          </tr>
+        
+      
+            <tr>
+              <th> </th>
+              <th><div class="container-fluid" align="center">
+                <button class="btn btn-success" (click)="avg()">Calculate Result</button>
+              </div></th>
+              <th> </th><th> </th>
+            </tr>
+            <tr><th><button class='btm-btn-danger' align='center'>Total Marks : {{ add }}</button></th>
+            <th><div align="center">
+              <button >Grade :
+              <div *ngIf="add > 0">
+                <th>
+                <div *ngIf="add >= 90 && add <= 100">
+                  A
+                </div>
+                <div *ngIf="add >= 70 && add < 90">
+                  B
+                </div>
+                <div *ngIf="add >= 60 && add < 70">
+                  C
+                </div>
+                <div *ngIf="add >= 35 && add < 60">
+                  D
+                </div>
+                <div *ngIf="add < 35">
+                  F
+    
+                </div>
+            
+            
+              
+              </div></button>
+            </div></th>
+          <th>
+            <div align="center"> 
+              <button>Remarks
+            <div *ngIf="add > 0">
+              <div [ngSwitch]="true">
+                <p *ngSwitchCase="add >= 90">
+                  Excellent
+                </p>
+                <p *ngSwitchCase="add >= 70 && add < 90">
+                  Above Average
+                </p>
+                <p *ngSwitchCase="add >= 60 && add < 70">
+                  Average
+                </p>
+                <p *ngSwitchCase="add >= 35 && add < 60">
+                  Needs improvement
+                </p>
+                <p *ngSwitchCase="add < 35">
+                  VERY BAD
+                </p>
+                <p *ngSwitchDefault>
+                  No match found
+                </p>
+              </div>
+            </div>
+            </button>
+
+            
+        </div>
+
+
+          </th><th></th></tr>
+          </tbody>
+          
+   </table>
+    </form>
+    
